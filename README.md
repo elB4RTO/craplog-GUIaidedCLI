@@ -24,7 +24,7 @@ It's meant to be ran daily<br>
 <br>
 <b>USAGE WITHOUT INSTALLATION</b>:<br>
 <br>
-<code>chmod +x ./craplog.py ./craplog.sh ./crappy/*.py</code><br>
+<code>chmod +x ./craplog.py ./craplog.sh ./crappy/*.py ./aux/help.sh</code><br>
 <code>./craplog.py</code><br>
 <br>
 <br>

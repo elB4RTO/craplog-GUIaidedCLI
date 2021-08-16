@@ -8,6 +8,12 @@ It's meant to be ran daily
 <br>
 <br>
 <br>
+<b>DEPENDENCIES</b>:<br>
+- <i>tkinter</i><br>
+- <i>Tk</i><br>
+<br>
+<br>
+<br>
 <b>INSTALLATION</b>:<br>
 <br>
 chmod +x ./install.sh && exec ./install.sh<br>

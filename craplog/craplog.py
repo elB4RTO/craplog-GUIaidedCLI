@@ -201,7 +201,7 @@ def getHelp():
 	if terminal.get() == "konsole":
 		subprocess.Popen("%s -e './aux/help.sh'" %(terminal.get()), shell=True)
 	else:
-		subprocess.Popen("%s -e 'cat ./aux/elbarto ./aux/craplogo ./aux/help | less'" %(terminal.get()), shell=True)
+		subprocess.Popen("%s -e 'cat ./aux/elbarto.txt ./aux/craplogo.txt ./aux/help.txt | less'" %(terminal.get()), shell=True)
 
 def manage_Terminal():
 	menu_TERM.config(text=terminal.get())

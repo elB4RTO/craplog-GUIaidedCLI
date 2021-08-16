@@ -14,9 +14,16 @@ chmod +x ./install.sh && exec ./install.sh<br>
 <br>
 <br>
 <br>
-<b>USAGE</b>:<br>
+<b>USAGE</b> (installed):<br>
 <br>
 craplog<br>
+<br>
+<br>
+<br>
+<b>USAGE</b> (not installed):<br>
+<br>
+./craplog.py<br>
+<br>
 <br>
 <br>
 <br><hr><br>
@@ -74,7 +81,7 @@ Four <i>*.crapstats</i> files will be created inside the folder named STATS:<br>
 - <b>RES.crapstats</b> = RESPONSEs statistics of the choosen file<br>
 - <b>UA.crapstats</b> = USER AGENTs statistics of the choosen file<br>
 <br>
-You have the opportunity to also create statistics of the errors (<i>-e</i>) or even of only the errors (<i>--only-errors</i> , avoiding the usage of the access.log.1 file).<br>
+You have the opportunity to also create statistics of the errors (<i>--errors</i>) or even of only the errors (<i>--only-errors</i> , avoiding the usage of the access.log.1 file).<br>
 This will create 2 additional files inside STATS folder:<br>
 - <b>LEV.crapstats</b> = LOG LEVELs statistics of the choosen file<br>
 - <b>ERR.crapstats</b> = ERROR REPORTs statistics of the choosen file<br>

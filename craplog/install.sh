@@ -61,7 +61,7 @@ printf "#" > ./craplog.tmp
 printf "!/bin/bash\n" >> ./craplog.tmp
 printf "python3 $crapdir/craplog.py\n\n" >> ./craplog.tmp
 # GIVING EXECUTION PERMISSION TO FILES
-chmod +x ./craplog.* ./crappy/*
+chmod +x ./craplog.* ./crappy/* ./aux/*.sh
 # MOVING INSIDE bin
 sudo mv ./craplog.tmp /usr/bin/craplog
 # FIN

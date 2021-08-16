@@ -4,7 +4,7 @@ A tool that scrapes Apache2 logs to create both Single-Session and Global statis
 /<br>
 <br>
 CRAPLOG is a tool that takes Apache2 logs in their default form, scrapes them and creates simple statistics.<br>
-It's meant to be ran daily
+It's meant to be ran daily<br>
 <br>
 <br>
 <br>
@@ -14,21 +14,26 @@ It's meant to be ran daily
 <br>
 <br>
 <br>
-<b>INSTALLATION</b>:<br>
+<b>USAGE WITH INSTALLATION</b>:<br>
 <br>
-chmod +x ./install.sh && exec ./install.sh<br>
-<br>
-<br>
-<br>
-<b>USAGE</b> (installed):<br>
-<br>
-craplog<br>
+<code>chmod +x ./install.sh</code><br>
+<code>exec ./install.sh</code><br>
+<code>craplog</code><br>
 <br>
 <br>
 <br>
-<b>USAGE</b> (not installed):<br>
+<b>USAGE WITHOUT INSTALLATION</b>:<br>
 <br>
-./craplog.py<br>
+<code>chmod +x ./craplog.py ./craplog.sh ./crappy/*.py</code><br>
+<code>./craplog.py</code><br>
+<br>
+<br>
+<br>
+<br>
+<b>SIDE NOTES</b>:<br>
+<br>
+This Graphical version of CRAPLOG is still dependant on terminal emulators for the main code's execution.<br>
+Different terminals means different behaviors. If you're experiencing issues during execution, try to switch to another terminal (bottom-left button).<br>
 <br>
 <br>
 <br>

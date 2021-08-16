@@ -4,7 +4,12 @@ A tool that scrapes Apache2 logs to create both Single-Session and Global statis
 /<br>
 <br>
 CRAPLOG is a tool that takes Apache2 logs in their default form, scrapes them and creates simple statistics.<br>
-It's meant to be ran daily<br>
+It's meant to be ran daily.<br>
+<br>
+<br>
+This is a Graphical-aided version of CRAPLOG.<br>
+The GUI is just an help to pass arguments, you can still manually run CRAPLOG from terminal.<br>
+Don't like the GUI? Switch to <a href="https://github.com/elBarto-tools/craplog-CLI">full CLI</a><br>
 <br>
 <br>
 <br>

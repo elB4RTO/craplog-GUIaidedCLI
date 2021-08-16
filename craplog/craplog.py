@@ -588,7 +588,9 @@ button_REMEMBER = tk.Button(
 	justify = "center",
 	foreground = "#000000",
 	activeforeground="#FFFFFF",
+	background = "#FFFFFF",
 	activebackground = "#2e2eee",
+	highlightthickness = 0,
 	width = 15
 )
 

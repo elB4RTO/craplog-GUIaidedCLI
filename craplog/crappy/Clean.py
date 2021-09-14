@@ -1,120 +1,90 @@
-#!/usr/bin/python3
 
-import os
-import os.path
-import sys
-import time
-
-AccessLogs = int(sys.argv[1])
-CleanAccessLogs = int(sys.argv[2])
-
-if AccessLogs == 1:
-	if CleanAccessLogs == 1:
-		print("Cleaning & Scraping ACCESS LOGs ...")
+def Access(AccessLogs, CleanAccessLogs):
+	if CleanAccessLogs:
+		print("\033[92mCleaning & Scraping ACCESS LOGs\033[0m ...")
 	else:
-		print("Scraping ACCESS LOGs ...")
-	time.sleep(1)
+		print("\033[92mScraping ACCESS LOGs\033[0m ...")
 
 	# MODIFY THE NEXT LINE IF YOUR LOG PATH IS DIFFERENT
-	file = open("/var/log/apache2/access.log.1", "r")
-	LOGlist = file.read()
-	file.close
-	LOGlist = LOGlist.split('\n')
-	LOGlist_tmp = []
+	with open("/var/log/apache2/access.log.1", "r") as file:
+		LOGlist = file.read()
+
+	LOGlist		= LOGlist.split('\n')
+	LOGlist_tmp	= []
 
 	for log in LOGlist:
-		if log.startswith('192.168.') or log.startswith(str('::1')) or log == '':
+		if log.startswith('192.168.') or log.startswith('::1') or log == '':
 			continue
 		else:
 			LOGlist_tmp.append(log)
 
-	LOGlist = LOGlist_tmp
-	LOGcheck_tmp = []
-	LOGcheck = ""
+	LOGlist		= LOGlist_tmp
+	LOGlist_tmp = []
+	log_check	= ""
 	
-	if CleanAccessLogs == 1:
-		file = open("./STATS/CLEAN.access.log", "a")
-		for log in LOGlist:
-			log_tmp = log.split(' ')
-			log_ = log_tmp[0]
-			if log_ == LOGcheck:
-				file.write("\n%s\n" %( log ))
-			else:
-				if len(LOGcheck_tmp) == 0:
-					file.write("%s\n" %( log ))
-					LOGcheck_tmp.append(log)
+	if CleanAccessLogs:
+		with open("./STATS/CLEAN.access.log", "a") as file:
+			for log in LOGlist:
+				log_tmp	= log.split(' ')[0]
+				if log_tmp == log_check:
+					file.write("\n%s\n" %( log ))
 				else:
-					file.write("\n\n%s\n" %( log ))
-				LOGcheck = log_
-		file.close
+					if len(LOGlist_tmp) == 0:
+						file.write("%s\n" %( log ))
+						LOGlist_tmp.append(log)
+					else:
+						file.write("\n\n%s\n" %( log ))
+					log_check = log_tmp
 
-	file = open("./STATS/.IP.crap", "a")
+	with open("./STATS/.IP.crap", "a") as file:
+		for log in LOGlist:
+			log = log.split(' ')[0]
+			file.write("%s\n" %( log ))
+
+	req_file = open("./STATS/.REQ.crap", "a")
+	res_file = open("./STATS/.RES.crap", "a")
+	ua_file  = open("./STATS/.UA.crap", "a")
+
 	for log in LOGlist:
-		log_tmp = log.split(' ')
-		log_ = log_tmp[0]
-		file.write("%s\n" %( log_ ))
-	file.close
+		log = log.split('"')
+		
+		req = log[1]
+		req_file.write("%s\n" %( req ))
 
-	file = open("./STATS/.REQ.crap", "a")
-	for log in LOGlist:
-		log_tmp = log.split('"')
-		log_ = log_tmp[1]
-		file.write("%s\n" %( log_ ))
-	file.close
+		res = log[2].strip()[:3]
+		res_file.write("%s\n" %( res ))
 
-	file = open("./STATS/.RES.crap", "a")
-	for log in LOGlist:
-		log_tmp = log.split('"')
-		log_ = log_tmp[2]
-		log_ = log_.strip()
-		log_ = str(log_[:3])
-		file.write("%s\n" %( log_ ))
-	file.close
-
-	file = open("./STATS/.UA.crap", "a")
-	for log in LOGlist:
-		log_tmp = log.split('"')
-		log_ = log_tmp[5]
-		file.write("%s\n" %( log_ ))
-	file.close
+		ua = log[5]
+		ua_file.write("%s\n" %( ua ))
+	
+	req_file.close()
+	res_file.close()
+	ua_file.close()
 
 
-################################
 
-ErrorLogs = int(sys.argv[3])
-
-if ErrorLogs == 1:
-	print("Scraping ERROR LOGs ...")
-	time.sleep(1)
+def Error(ErrorLogs):
+	print("\033[92mScraping ERROR LOGs\033[0m ...")
 	
 	# MODIFY THE NEXT LINE IF YOUR LOG PATH IS DIFFERENT
-	file = open("/var/log/apache2/error.log.1", "r")
-	ERRLOGlist = file.read()
-	file.close
-	ERRLOGlist = ERRLOGlist.strip()
-	ERRLOGlist = ERRLOGlist.split('\n')
-	LEVlist = []
-	ERRlist = []
+	with open("/var/log/apache2/error.log.1", "r") as file:
+		LOGlist = file.read()
 
-	for log in ERRLOGlist:
+	LOGlist = LOGlist.strip().split('\n')
+
+	err_file = open("./STATS/.ERR.crap", "a")
+	lev_file = open("./STATS/.LEV.crap", "a")
+
+	for log in LOGlist:
 		if log != '':
 			log = log.split('[')
-			LEVlist.append(log[2].strip(' ]'))
+
+			lev_file.write("%s\n" %( log[2].strip(' ]') ))
+
 			if log[3].startswith('pid') and log[3].endswith('] '):
-				ERRlog = log[4]
-				ERRlog = ERRlog.split(']')
-				ERRlist.append(ERRlog[1].strip())
+				err_file.write("%s\n" %( log[4].split(']')[1].strip() ))
 			else:
-				ERRlog = log[3]
-				ERRlog = ERRlog.split(']')
-				ERRlist.append(ERRlog[1].strip())
+				err_file.write("%s\n" %( log[3].split(']')[1].strip() ))
 
-	file = open("./STATS/.LEV.crap", "a")
-	for log in LEVlist:
-		file.write("%s\n" %( log ))
-	file.close
-
-	file = open("./STATS/.ERR.crap", "a")
-	for log in ERRlist:
-		file.write("%s\n" %( log ))
-	file.close
+	err_file.close()
+	lev_file.close()

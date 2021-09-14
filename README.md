@@ -14,8 +14,14 @@ Don't like the GUI? Switch to <a href="https://github.com/elBarto-tools/craplog-
 <br>
 <br>
 <b>DEPENDENCIES</b>:<br>
-- <i>tkinter</i><br>
-- <i>Tk</i><br>
+- <i>tk</i> / <i>tkinter</i><br>
+- <i>os</i><br>
+- <i>sys</i><br>
+- <i>time</i><br>
+- <i>pathlib</i><br>
+- <i>datetime</i><br>
+- <i>subprocess</i><br>
+- <i>collections</i><br>
 <br>
 <br>
 <br>
@@ -29,7 +35,7 @@ Don't like the GUI? Switch to <a href="https://github.com/elBarto-tools/craplog-
 <br>
 <b>USAGE WITHOUT INSTALLATION</b>:<br>
 <br>
-<code>chmod +x ./craplog.py ./craplog.sh ./crappy/*.py ./aux/help.sh</code><br>
+<code>chmod +x ./craplog.py ./craplog.sh ./crappy/*.py</code><br>
 <code>./craplog.py</code><br>
 <br>
 <br>
@@ -48,8 +54,8 @@ Different terminals means different behaviors. If you're experiencing issues dur
 <br>
 At the moment, it only supports <b>Apache2</b> log files in their <b>default</b> form and path<br>
 If you're using a different path, please open the file named <b>Clean.py</b> (you can find it inside the folder named <i>crappy</i>) and <b>modify</b> these lines:<br>
-- <b>19</b> ] for the <i>access.log.1</i> file<br>
-- <b>91</b> ] for the <i>error.log.1</i> file<br>
+- <b>9</b> ] for the <i>access.log.1</i> file<br>
+- <b>70</b> ] for the <i>error.log.1</i> file<br>
 <br>
 <br>
 <i>DEFAULT PATH:</i><br>

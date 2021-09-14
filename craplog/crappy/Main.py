@@ -156,7 +156,7 @@ if os.exists("%s/STATS/" %( crappath )):
 			if File.startswith(".GLOBAL.") and File.endswith(".crap"):
 				ConflictFiles.append("GLOBALS/%s" %( File ))
 else:
-	Path("%s/STATS" %( crappath )).mkdir(parents=True, exist_ok=True)
+	Path("%s/STATS/GLOBALS" %( crappath )).mkdir(parents=True, exist_ok=True)
 
 if len(ConflictFiles) > 0:
 	if AutoDelete:

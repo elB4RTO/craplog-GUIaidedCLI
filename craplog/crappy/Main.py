@@ -138,22 +138,25 @@ time.sleep(2)
 # CHECKING AND REMOVING CONFLICT FILES
 FilesList		= []
 ConflictFiles	= []
-for (path, dirs, files) in os.walk("%s/STATS/" %( crappath )):
-	FilesList.extend(files)
-	break
-if len(FilesList) > 0:
-	for File in FilesList:
-		if File.endswith(".crap") or File.endswith(".crapstats") or File == "CLEAN.access.log":			
-			ConflictFiles.append(File)
+if os.exists("%s/STATS/" %( crappath )):
+	for (path, dirs, files) in os.walk("%s/STATS/" %( crappath )):
+		FilesList.extend(files)
+		break
+	if len(FilesList) > 0:
+		for File in FilesList:
+			if File.endswith(".crap") or File.endswith(".crapstats") or File == "CLEAN.access.log":			
+				ConflictFiles.append(File)
 
-FilesList		= []
-for (path, dirs, files) in os.walk("%s/STATS/GLOBALS/" %( crappath )):
-	FilesList.extend(files)
-	break
-if len(FilesList) > 0:
-	for File in FilesList:
-		if File.startswith(".GLOBAL.") and File.endswith(".crap"):
-			ConflictFiles.append("GLOBALS/%s" %( File ))
+	FilesList		= []
+	for (path, dirs, files) in os.walk("%s/STATS/GLOBALS/" %( crappath )):
+		FilesList.extend(files)
+		break
+	if len(FilesList) > 0:
+		for File in FilesList:
+			if File.startswith(".GLOBAL.") and File.endswith(".crap"):
+				ConflictFiles.append("GLOBALS/%s" %( File ))
+else:
+	Path("%s/STATS" %( crappath )).mkdir(parents=True, exist_ok=True)
 
 if len(ConflictFiles) > 0:
 	if AutoDelete:

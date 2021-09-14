@@ -23,11 +23,11 @@
  ¦-----------------------------------------------------------¦
  ¦  --only-errors  ¦ use only error logs (skip access logs)  ¦
  ¦-----------------------------------------------------------¦
- ¦ --only-globals  ¦ use only error logs (skip access logs)  ¦
+ ¦ --only-globals  ¦ only update globals (skip session stats)¦
  ¦-----------------------------------------------------------¦
- ¦ --avoid-globals ¦ use only error logs (skip access logs)  ¦
+ ¦ --avoid-globals ¦ do not update global statistics         ¦
  ¦-----------------------------------------------------------¦
- ¦    --backup     ¦ create a backup archive                 ¦
+ ¦    --backup     ¦ create a backup archive with originals  ¦
  ¦-----------------------------------------------------------¦
  ¦ --backu+delete  ¦ create a backup + delete original files ¦
  ¦-----------------------------------------------------------¦
@@ -36,4 +36,4 @@
  ¦    --trash      ¦ move files to Trash instead of remove   ¦
  ¦-----------------------------------------------------------¦
  ¦    --shred      ¦ use shred on files instead of remove    ¦
-  -----------------------------------------------------------
+  ----------------------------------------------------------- 

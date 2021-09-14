@@ -35,7 +35,7 @@ Don't like the GUI? Switch to <a href="https://github.com/elBarto-tools/craplog-
 <br>
 <b>USAGE WITHOUT INSTALLATION</b>:<br>
 <br>
-<code>chmod +x ./craplog.py ./craplog.sh ./crappy/*.py</code><br>
+<code>chmod +x ./craplog.py ./crappy/*.py</code><br>
 <code>./craplog.py</code><br>
 <br>
 <br>

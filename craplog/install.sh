@@ -54,16 +54,37 @@ if [ -e /usr/bin/craplog ]
 					esac
 			done
 	fi
+
 # EVERYTHING WENT GOOD
 printf "Installing ...\n"
+
 # CREATING EXECUTABLE
 printf "#" > ./craplog.tmp
 printf "!/bin/bash\n" >> ./craplog.tmp
 printf "python3 $crapdir/craplog.py\n\n" >> ./craplog.tmp
-# GIVING EXECUTION PERMISSION TO FILES
-chmod +x ./craplog.* ./crappy/* ./aux/*.sh
-# MOVING INSIDE bin
+# MOVING INSIDE /usr/bin
 sudo mv ./craplog.tmp /usr/bin/craplog
+
+# GIVING EXECUTION PERMISSION TO FILE
+chmod +x ./craplog.py
+
+# INSTALLING DEPENDENCIES
+printf "Do you want to install dependencies? [Y/N] : "
+read agree
+	case "$agree"
+		in
+			"Y" | "y")
+				printf "\nInstalling Dependencies ...\n"
+				for dep in "tk" "time" "pathlib" "datetime" "subprocess" "collections"
+					do
+						pip3 install "$dep"
+					done
+			;;
+			*)
+				printf "\n"
+			;;
+		esac
+
 # FIN
 printf "Done\n\n"
 sleep 1 && wait

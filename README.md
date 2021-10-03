@@ -1,4 +1,4 @@
-# craplog-GUI
+# craplog-GUIaidedCLI
 A tool that scrapes Apache2 logs to create both Single-Session and Global statistics
 
 /<br>
@@ -7,9 +7,12 @@ CRAPLOG is a tool that takes Apache2 logs in their default form, scrapes them an
 It's meant to be ran daily.<br>
 <br>
 <br>
+<img src="https://github.com/elB4RTO/CRAPLOG/blob/main/crapshots/GUI_aided_CLI.png">
+<br>
+<br>
 This is a Graphical-aided version of CRAPLOG.<br>
 The GUI is just an help to pass arguments, you can still manually run CRAPLOG from terminal.<br>
-Don't like the GUI? Switch to <a href="https://github.com/elBarto-tools/craplog-CLI">full CLI</a><br>
+Don't like the GUI? Switch to <a href="https://github.com/elB4RTO/craplog-fullCLI">full CLI</a><br>
 <br>
 <br>
 <br>

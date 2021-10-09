@@ -1,5 +1,5 @@
 
-def Access(AccessLogs):
+def Access():
 
 	print("\033[92mUpdating GLOBAL statistics of ACCESS LOGs\033[0m ...")
 	
@@ -155,7 +155,7 @@ def Access(AccessLogs):
 
 
 
-def Error(ErrorLogs):
+def Error():
 
 	print("\033[92mUpdating GLOBAL statistics of ERROR LOGs\033[0m ...")
 	

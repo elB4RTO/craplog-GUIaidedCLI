@@ -47,7 +47,7 @@ if not AccessLogs and not ErrorLogs:
 	if closing == "" or closing == "y" or closing == "Y":
 		print("\n\033[33m[+]\033[0m: this should be only a security check")
 		print("\033[33m[+]\033[0m: if you're reading this, both the [\033[36mAccessLogs\033[0m] and the [\033[36mErrorLogs\033[0m] variable are set to \033[31m0\033[0m.")
-		print("\033[33m[+]\033[0m: if you manually edited any file, undo the changes or copy paste the original from https://github.com/elB4RTO/craplog-GUI")
+		print("\033[33m[+]\033[0m: if you manually edited any file, undo the changes or copy paste the original from https://github.com/elB4RTO/craplog-GUIaidedCLI")
 		print("\033[33m[+]\033[0m: if you haven't edited any file, please report this issue")
 		input("\n\033[90mPress any key to continue ...\033[0m\n")
 	else:
@@ -55,7 +55,7 @@ if not AccessLogs and not ErrorLogs:
 	exit()
 
 if not AccessLogs and CleanAccessLogs:
-	print("\033[33mError\033[0m: not possible to make a clean access log file [\033[36m-c\033[0m] without working on a access.log file [\033[36m--only-errors\033[0m]")
+	print("\033[33mError\033[0m: not possible to make a clean access log file [\033[36m--clean\033[0m] without working on a access.log file [\033[36m--only-errors\033[0m]")
 	input("\n\033[90mPress any key to continue ...\033[0m\n")
 	exit()
 
@@ -65,7 +65,7 @@ if not ErrorLogs and ErrorsOnly:
 	if closing == "" or closing == "y" or closing == "Y":
 		print("\n\033[33m[+]\033[0m: this should be only a security check")
 		print("\033[33m[+]\033[0m: if you're reading this, the [\033[36mErrorsOnly\033[0m] variable is set to \033[31m1\033[0m, but the [\033[36mErrorLogs\033[0m] variable is set to \033[31m0\033[0m.")
-		print("\033[33m[+]\033[0m: if you manually edited any file, undo the changes or copy paste the original from https://github.com/elB4RTO/craplog-GUI")
+		print("\033[33m[+]\033[0m: if you manually edited any file, undo the changes or copy paste the original from https://github.com/elB4RTO/craplog-GUIaidedCLI")
 		print("\033[33m[+]\033[0m: if you haven't edited any file, please report this error")
 		input("\n\033[90mPress any key to continue ...\033[0m\n")
 	else:
@@ -73,12 +73,12 @@ if not ErrorLogs and ErrorsOnly:
 	exit()
 
 if GlobalsOnly and GlobalsAvoid:
-	print("\033[33mError\033[0m: you can't use \033[36m--only-globals\033[0m toghether with \033[36m--avoid-globals\033[0m")
+	print("\033[33mError\033[0m: you can't use [\033[36m--only-globals\033[0m] toghether with [\033[36m--avoid-globals\033[0m]")
 	input("\n\033[90mPress any key to continue ...\033[0m\n")
 	exit()
 
 if Trash and Shred:
-	print("\033[33mError\033[0m: you can't use \033[36m--trash\033[0m toghether with \033[36m--shred\033[0m")
+	print("\033[33mError\033[0m: you can't use [\033[36m--trash\033[0m] toghether with [\033[36m--shred\033[0m]")
 	input("\n\033[90mPress any key to continue ...\033[0m\n")
 	exit()
 
@@ -138,7 +138,7 @@ time.sleep(2)
 # CHECKING AND REMOVING CONFLICT FILES
 FilesList		= []
 ConflictFiles	= []
-if os.exists("%s/STATS/" %( crappath )):
+if os.path.exists("%s/STATS/" %( crappath )):
 	for (path, dirs, files) in os.walk("%s/STATS/" %( crappath )):
 		FilesList.extend(files)
 		break
@@ -227,8 +227,8 @@ if len(ConflictFiles) > 0:
 
 # STARTING CRAPLOG
 # CLEANING AND SCRAPING SESSION LOGS
-Clean.Access( AccessLogs, CleanAccessLogs)
-Clean.Error( ErrorLogs )
+if AccessLogs:	Clean.Access( CleanAccessLogs )
+if ErrorLogs:	Clean.Error()
 if not LessOutput:
 	print("Done\n")
 	time.sleep(1)
@@ -242,8 +242,8 @@ if not LessOutput:
 
 
 # CREATING STATISTICS FROM SESSION LOGS
-Stat.Access( AccessLogs )
-Stat.Error( ErrorLogs )
+if AccessLogs:	Stat.Access()
+if ErrorLogs:	Stat.Error()
 if not LessOutput:
 	print("Done\n")
 	time.sleep(1)
@@ -296,8 +296,8 @@ if not GlobalsAvoid:
 		except:
 			Path("%s/STATS/GLOBALS/.GLOBAL.ERR.crap" %( crappath )).touch()
 
-	Glob.Access( AccessLogs )
-	Glob.Error( ErrorLogs )
+	if AccessLogs:	Glob.Access()
+	if ErrorLogs:	Glob.Error()
 	if not LessOutput:
 		print("Done\n")
 		time.sleep(1)

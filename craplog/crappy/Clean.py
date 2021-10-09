@@ -1,5 +1,5 @@
 
-def Access(AccessLogs, CleanAccessLogs):
+def Access(CleanAccessLogs):
 	if CleanAccessLogs:
 		print("\033[92mCleaning & Scraping ACCESS LOGs\033[0m ...")
 	else:
@@ -63,7 +63,7 @@ def Access(AccessLogs, CleanAccessLogs):
 
 
 
-def Error(ErrorLogs):
+def Error():
 	print("\033[92mScraping ERROR LOGs\033[0m ...")
 	
 	# MODIFY THE NEXT LINE IF YOUR LOG PATH IS DIFFERENT

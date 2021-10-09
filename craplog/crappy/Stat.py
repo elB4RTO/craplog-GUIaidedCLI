@@ -1,6 +1,6 @@
 from collections import Counter
 
-def Access(AccessLogs):
+def Access():
 
 	print("\033[92mCreating statistics from ACCESS LOGs\033[0m ...")
 
@@ -94,7 +94,7 @@ def Access(AccessLogs):
 
 
 
-def Error(ErrorLogs):
+def Error():
 	print("\033[92mCreating statistics from ERROR LOGs\033[0m ...")
 
 	# LEVs

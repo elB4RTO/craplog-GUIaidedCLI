@@ -11,8 +11,9 @@ It's meant to be ran daily.<br>
 <br>
 <br>
 This is a Graphical-aided version of CRAPLOG.<br>
-The GUI is just an help to pass arguments, you can still manually run CRAPLOG from terminal.<br>
-Don't like the GUI? Switch to <a href="https://github.com/elB4RTO/craplog-fullCLI">full CLI</a><br>
+The GUI is just an help to pass arguments, you can still manually run CRAPLOG from terminal.<br><br>
+Don't like this way of running software? Try the <a href="https://github.com/elB4RTO/craplog-fullCLI">full CLI</a> version<br><br>
+Looking for a more graphical version? Switch to the <a href="https://github.com/elB4RTO/craplog-fullGUI">full GUI</a><br>
 <br>
 <br>
 <br>

@@ -46,8 +46,6 @@ Looking for a more graphical version? Switch to the <a href="https://github.com/
 This Graphical version of CRAPLOG is still dependant on terminal emulators for the main code's execution.<br>
 Different terminals means different behaviors. If you're experiencing issues during execution, try to switch to another terminal (bottom-left button).<br>
 <br>
-<br>
-<br>
 <br><hr><br>
 <br>
 <b>LOG FILES</b>:<br>

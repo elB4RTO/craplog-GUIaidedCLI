@@ -7,7 +7,7 @@ CRAPLOG is a tool that takes Apache2 logs in their default form, scrapes them an
 It's meant to be ran daily.<br>
 <br>
 <br>
-<img src="https://github.com/elB4RTO/CRAPLOG/blob/main/crapshots/GUI_aided_CLI.png">
+<img src="https://github.com/elB4RTO/CRAPLOG/blob/main/crapshots/GUI_aided_CLI.png"><br>
 <br>
 <br>
 This is a Graphical-aided version of CRAPLOG.<br>

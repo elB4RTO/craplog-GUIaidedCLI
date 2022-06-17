@@ -11,7 +11,7 @@ It's meant to be ran daily.<br/><br/>
 ![screenshopt](https://github.com/elB4RTO/Craplog/blob/main/crapshots/GUIaidedCLI/launcher.png)<br/><br/>
 
 This is a Graphical-aided version of Craplog.<br/>
-The GUI is just an help to pass arguments, Craplog still relies on a terminal.
+The GUI is just a launcher, Craplog still relies on a terminal.
 
 ![screenshot](https://github.com/elB4RTO/Craplog/blob/main/crapshots/GUIaidedCLI/craplog.png)<br/><br/>
 
@@ -36,7 +36,7 @@ Different terminals means different behaviors. If you're experiencing issues dur
 
 ```
 chmod +x ./install.sh
-exec ./install.sh
+./install.sh
 craplog
 ```
 
@@ -45,8 +45,7 @@ craplog
 ## Usage without installation
 
 ```
-chmod +x ./craplog.py ./crappy/*.py
-./craplog.py
+python3 craplog.py
 ```
 <br/><br/>
 
@@ -140,7 +139,7 @@ A maximum of 6 GLOBAL files will be created inside *STATS/GLOBALS/*:
 
 Statistics' structure is the same for both SESSION and GLOBALS:
 
-**{ ***COUNT*** } &emsp; >>> &emsp; ***ELEMENT*<br/><br/>
+{ **COUNT** } &emsp; >>> &emsp; **ELEMENT**<br/><br/>
 
 *example*:
 
@@ -162,11 +161,12 @@ Statistics' structure is the same for both SESSION and GLOBALS:
 
 - Also creates statisics of error logs file, but avoids updating globals
 
-  `--errors` `--avoid-globals`<br/><br/>
+  `--errors` `--avoid-globals`
+
+<br/>
 
 #### Note
-
-Please notice that even usign *--only-globals*, normal SESSION's statistic files will be created. Craplog needs session files in order to update global ones.<br/>
+Please notice that even usign `--only-globals`, normal session's statistic files will be created. Craplog needs session files in order to update global ones.<br/>
 After completing the job, session files will be automatically removed.
 
 <br/>
@@ -177,16 +177,16 @@ After completing the job, session files will be automatically removed.
 
 1~10 MB/s
 
-May be higher or lower depending on the complexity of your SESSION logs, the length of your GLOBALS and the power of your CPU.<br/>
+May be higher or lower depending on the complexity of the logs, the length of your globals and the power of your CPU.<br/>
 If Craplog takes more than 1 minute for a 10 MB file, you've probably been tested in some way (better to check).<br/><br/>
 
 #### Global's backups
 
 Craplog automatically makes backups of global statistic files, in case of fire.<br/>
-If something goes wrong and you lose your actual GLOBAL files, you can recover them (at least the last backup).<br/>
+If something goes wrong and you lose your actual global files, you can recover them (at least the last backup).<br/>
 Move inside Craplog folder, open '**STATS**', open '**GLOBALS**', show hidden files and open '**.BACKUPS**'. Here you will find the last 7 backups taken.<br/>
 Folder named '7' is always the newest and '1' the oldest.<br/>
-A new BACKUP is made every 7th time you run Craplog. If you run it once a day, it will takes backups once a week, and will keep the older one for 7 weeks.<br/><br/>
+A new backup is made every 7th time you run Craplog. If you run it once a day, it will takes backups once a week, and will keep the older one for 7 weeks.<br/><br/>
 
 #### Developement and Contribution
 

@@ -7,7 +7,7 @@ Parse Apache2 logs to create statistics
 
 ***THIS VERSION IS UN-MANTAINED***
 
-PLEASE REFER TO THE [OTHER VERSIONS OF **CRAPLOG**](https://github.com/elB4RTO/CRAPLOG#official-versions) TO FIND ORE ADVANCED VERSIONS
+PLEASE REFER TO THE [OTHER VERSIONS OF **CRAPLOG**](https://github.com/elB4RTO/CRAPLOG#official-versions) TO FIND MORE ADVANCED VERSIONS
 
 SEE [**The Craplog Project**](https://github.com/users/elB4RTO/projects/1) IF YOU WANT TO NOW MORE
 

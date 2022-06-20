@@ -204,3 +204,4 @@ Craplog is under development.<br/>
 If you have suggestions about how to improve it please open an [issue](https://github.com/elB4RTO/craplog-GUIaidedCLI/issues).<br/><br/>
 
 If you're not running Apache, but you like this tool: same as the above (bring a sample of a log file).<br/>
+

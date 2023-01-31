@@ -18,12 +18,12 @@ SEE [**The Craplog Project**](https://github.com/users/elB4RTO/projects/1) IF YO
 Craplog is a tool that takes Apache2 logs in their default form, scrapes them and creates simple statistics.<br/>
 It's meant to be ran daily.<br/><br/>
 
-![screenshopt](https://github.com/elB4RTO/Craplog/blob/main/crapshots/GUIaidedCLI/launcher.png)<br/><br/>
+![screenshot](https://github.com/elB4RTO/screenshots/blob/main/Craplog/GUIaidedCLI/launcher.png)<br/><br/>
 
 This is a Graphical-aided version of Craplog.<br/>
 The GUI is just a launcher, Craplog still relies on a terminal.
 
-![screenshot](https://github.com/elB4RTO/Craplog/blob/main/crapshots/GUIaidedCLI/craplog.png)<br/><br/>
+![screenshot](https://github.com/elB4RTO/screenshots/blob/main/Craplog/GUIaidedCLI/craplog.png)<br/><br/>
 
 Don't like it? Try the [other versions of Craplog](https://github.com/elB4RTO/CRAPLOG#official-versions)
 
